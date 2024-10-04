@@ -2,50 +2,36 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
+const links = [
+    { path: "/", label: "Home" },
+    { path: "/tic-tac-toe", label: "Tic Tac Toe" },
+    { path: "/hangman", label: "Hangman" },
+    { path: "/connect4", label: "Connect 4" },
+    { path: "/dots", label: "Dots" },
+    { path: "/memory", label: "Memory" },
+    { path: "/snake", label: "Snake" },
+    { path: "/minesweeper", label: "Minesweeper" },
+    { path: "/simon-says", label: "Simon Says" },
+    { path: "/checkers", label: "Checkers" },
+    { path: "/rock-paper-scissors", label: "Rock Paper Scissors" },
+    { path: "/sudoku", label: "Sudoku" },
+];
+
+// Conditionally add the Sandbox link in development mode
+if (process.env.NODE_ENV === 'development') {
+    links.push({ path: "/sandbox", label: "Sandbox" });
+}
+
 const NavMenu = () => {
     return (
         <>
             <nav>
                 <ul>
-                    <li>
-                        <RouterLink to="/">Home</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/tic-tac-toe">Tic Tac Toe</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/hangman">Hangman</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/connect4">Connect 4</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/dots">Dots</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/memory">Memory</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/snake">Snake</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/minesweeper">Minesweeper</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/simon-says">Simon Says</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/checkers">Checkers</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/rock-paper-scissors">Rock Paper Scissors</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/sudoku">Sudoku</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/sandbox">Sandbox</RouterLink>
-                    </li>
+                    {links.map((link) => (
+                        <li key={link.path}>
+                            <RouterLink to={link.path}>{link.label}</RouterLink>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </>
