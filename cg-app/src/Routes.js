@@ -17,6 +17,7 @@ import RockPaperScissorsGamePage from './pages/RockPaperScissorGamePage';
 import SudokuGamePage from './pages/SudokuGamePage';
 import WordSearchGamePage from './pages/WordSearchGamePage';
 import BattleshipGamePage from './pages/BattleShipGamePage';
+import ChessGamePage from './pages/ChessGamePage';
 import Sandbox from './pages/Sandbox';
 
 const AppRoutes = () => {
@@ -37,6 +38,7 @@ const AppRoutes = () => {
                 <Route path="/sudoku" element={<SudokuGamePage />} />
                 <Route path="/word-search" element={<WordSearchGamePage />} />
                 <Route path="/battle-ship" element={<BattleshipGamePage />} />
+                <Route path="/chess" element={<ChessGamePage />} />
                 {process.env.NODE_ENV === 'development' && (
                     <Route path="/sandbox" element={<Sandbox />} />
                 )}

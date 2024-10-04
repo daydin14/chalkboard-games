@@ -17,6 +17,7 @@ const links = [
     { path: "/sudoku", label: "Sudoku" },
     { path: '/word-search', label: 'Word Search' },
     { path: '/battle-ship', label: 'Battle Ship' },
+    { path: '/chess', label: 'Chess' }
 ];
 
 // Conditionally add the Sandbox link in development mode
