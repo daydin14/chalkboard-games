@@ -10,6 +10,7 @@ import Connect4Page from './pages/Connect4Page';
 import DotsGamePage from './pages/DotsGamePage';
 import MemoryGamePage from './pages/MemoryGamePage';
 import SnakeGamePage from './pages/SnakeGamePage';
+import MinesweeperGamePage from './pages/MinesweeperGamePage';
 import Sandbox from './pages/Sandbox';
 
 const AppRoutes = () => {
@@ -23,6 +24,7 @@ const AppRoutes = () => {
                 <Route path="/dots" element={<DotsGamePage />} />
                 <Route path="/memory" element={<MemoryGamePage />} />
                 <Route path="/snake" element={<SnakeGamePage />} />
+                <Route path="/minesweeper" element={<MinesweeperGamePage />} />
                 {process.env.NODE_ENV === 'development' && (
                     <Route path="/sandbox" element={<Sandbox />} />
                 )}
