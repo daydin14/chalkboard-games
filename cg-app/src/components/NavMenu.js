@@ -35,6 +35,9 @@ const NavMenu = () => {
                         <RouterLink to="/simon-says">Simon Says</RouterLink>
                     </li>
                     <li>
+                        <RouterLink to="/checkers">Checkers</RouterLink>
+                    </li>
+                    <li>
                         <RouterLink to="/sandbox">Sandbox</RouterLink>
                     </li>
                 </ul>

@@ -12,6 +12,7 @@ import MemoryGamePage from './pages/MemoryGamePage';
 import SnakeGamePage from './pages/SnakeGamePage';
 import MinesweeperGamePage from './pages/MinesweeperGamePage';
 import SimonSaysGamePage from './pages/SimonSaysGamePage';
+import CheckersGamePage from './pages/CheckersGamePage';
 import Sandbox from './pages/Sandbox';
 
 const AppRoutes = () => {
@@ -27,6 +28,7 @@ const AppRoutes = () => {
                 <Route path="/snake" element={<SnakeGamePage />} />
                 <Route path="/minesweeper" element={<MinesweeperGamePage />} />
                 <Route path="/simon-says" element={<SimonSaysGamePage />} />
+                <Route path="/checkers" element={<CheckersGamePage />} />
                 {process.env.NODE_ENV === 'development' && (
                     <Route path="/sandbox" element={<Sandbox />} />
                 )}

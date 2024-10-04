@@ -1,0 +1,52 @@
+.checkers-game {
+  text-align: center;
+}
+
+.board {
+  display: inline-block;
+  margin: 20px auto;
+}
+
+.board-row {
+  display: flex;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cell.black {
+  background-color: black;
+}
+
+.cell.white {
+  background-color: white;
+}
+
+.piece {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.piece.red {
+  background-color: red;
+}
+
+.piece.black {
+  background-color: black;
+}
+
+.piece.king {
+  border: 2px solid gold;
+}
+
+.current-player {
+  margin-top: 20px;
+  font-size: 18px;
+}
