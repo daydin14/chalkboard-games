@@ -7,8 +7,10 @@ import NavMenu from './NavMenu'
 const Header = () => {
     return (
         <>
-            <h1>Chalkboard Games</h1>
-            <NavMenu />
+            <header>
+                <h1>Chalkboard Games</h1>
+                <NavMenu />
+            </header>
         </>
     )
 }
