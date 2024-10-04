@@ -41,6 +41,9 @@ const NavMenu = () => {
                         <RouterLink to="/rock-paper-scissors">Rock Paper Scissors</RouterLink>
                     </li>
                     <li>
+                        <RouterLink to="/sudoku">Sudoku</RouterLink>
+                    </li>
+                    <li>
                         <RouterLink to="/sandbox">Sandbox</RouterLink>
                     </li>
                 </ul>
