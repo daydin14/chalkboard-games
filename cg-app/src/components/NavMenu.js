@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
+// Navigation Links
 const links = [
     { path: "/", label: "Home" },
     { path: "/tic-tac-toe", label: "Tic Tac Toe" },

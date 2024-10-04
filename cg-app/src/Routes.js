@@ -20,28 +20,39 @@ import BattleshipGamePage from './pages/BattleShipGamePage';
 import ChessGamePage from './pages/ChessGamePage';
 import Sandbox from './pages/Sandbox';
 
+// Routes
+const pages = [
+    { path: '/', component: <Home /> },
+    { path: '/tic-tac-toe', component: <TicTacToe /> },
+    { path: '/hangman', component: <HangmanPage /> },
+    { path: '/connect4', component: <Connect4Page /> },
+    { path: '/dots', component: <DotsGamePage /> },
+    { path: '/memory', component: <MemoryGamePage /> },
+    { path: '/snake', component: <SnakeGamePage /> },
+    { path: '/minesweeper', component: <MinesweeperGamePage /> },
+    { path: '/simon-says', component: <SimonSaysGamePage /> },
+    { path: '/checkers', component: <CheckersGamePage /> },
+    { path: '/rock-paper-scissors', component: <RockPaperScissorsGamePage /> },
+    { path: '/sudoku', component: <SudokuGamePage /> },
+    { path: '/word-search', component: <WordSearchGamePage /> },
+    { path: '/battle-ship', component: <BattleshipGamePage /> },
+    { path: '/chess', component: <ChessGamePage /> }
+]
+
+// Conditionally add the Sandbox page in development mode
+if (process.env.NODE_ENV === 'development') {
+    pages.push({ path: '/sandbox', component: <Sandbox /> });
+}
+
 const AppRoutes = () => {
     return (
         <>
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route path="/tic-tac-toe" element={<TicTacToe />} />
-                <Route path="/hangman" element={<HangmanPage />} />
-                <Route path="/connect4" element={<Connect4Page />} />
-                <Route path="/dots" element={<DotsGamePage />} />
-                <Route path="/memory" element={<MemoryGamePage />} />
-                <Route path="/snake" element={<SnakeGamePage />} />
-                <Route path="/minesweeper" element={<MinesweeperGamePage />} />
-                <Route path="/simon-says" element={<SimonSaysGamePage />} />
-                <Route path="/checkers" element={<CheckersGamePage />} />
-                <Route path="/rock-paper-scissors" element={<RockPaperScissorsGamePage />} />
-                <Route path="/sudoku" element={<SudokuGamePage />} />
-                <Route path="/word-search" element={<WordSearchGamePage />} />
-                <Route path="/battle-ship" element={<BattleshipGamePage />} />
-                <Route path="/chess" element={<ChessGamePage />} />
-                {process.env.NODE_ENV === 'development' && (
-                    <Route path="/sandbox" element={<Sandbox />} />
-                )}
+                {pages.map((page) => (
+                    page.path === '/'
+                        ? <Route exact path={page.path} element={page.component} />
+                        : <Route path={page.path} element={page.component} />
+                ))}
             </Routes>
         </>
     )
