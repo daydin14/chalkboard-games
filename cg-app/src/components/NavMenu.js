@@ -23,6 +23,9 @@ const NavMenu = () => {
                         <RouterLink to="/dots">Dots</RouterLink>
                     </li>
                     <li>
+                        <RouterLink to="/memory">Memory</RouterLink>
+                    </li>
+                    <li>
                         <RouterLink to="/sandbox">Sandbox</RouterLink>
                     </li>
                 </ul>

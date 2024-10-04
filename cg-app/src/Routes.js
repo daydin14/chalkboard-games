@@ -8,6 +8,7 @@ import TicTacToe from './pages/TicTacToe';
 import HangmanPage from './pages/HangmanPage';
 import Connect4Page from './pages/Connect4Page';
 import DotsGamePage from './pages/DotsGamePage';
+import MemoryGamePage from './pages/MemoryGamePage';
 import Sandbox from './pages/Sandbox';
 
 const AppRoutes = () => {
@@ -19,6 +20,7 @@ const AppRoutes = () => {
                 <Route path="/hangman" element={<HangmanPage />} />
                 <Route path="/connect4" element={<Connect4Page />} />
                 <Route path="/dots" element={<DotsGamePage />} />
+                <Route path="/memory" element={<MemoryGamePage />} />
                 {process.env.NODE_ENV === 'development' && (
                     <Route path="/sandbox" element={<Sandbox />} />
                 )}
