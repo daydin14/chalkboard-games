@@ -15,6 +15,7 @@ const links = [
     { path: "/checkers", label: "Checkers" },
     { path: "/rock-paper-scissors", label: "Rock Paper Scissors" },
     { path: "/sudoku", label: "Sudoku" },
+    { path: '/word-search', label: 'Word Search' }
 ];
 
 // Conditionally add the Sandbox link in development mode
