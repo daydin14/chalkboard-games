@@ -1,0 +1,50 @@
+.simon-says-game {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button.red {
+  background-color: red;
+}
+
+.button.green {
+  background-color: green;
+}
+
+.button.blue {
+  background-color: blue;
+}
+
+.button.yellow {
+  background-color: yellow;
+}
+
+.button.active {
+  opacity: 0.5;
+}
+
+.message {
+  margin: 20px;
+  font-size: 18px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
