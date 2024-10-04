@@ -26,6 +26,9 @@ const NavMenu = () => {
                         <RouterLink to="/memory">Memory</RouterLink>
                     </li>
                     <li>
+                        <RouterLink to="/snake">Snake</RouterLink>
+                    </li>
+                    <li>
                         <RouterLink to="/sandbox">Sandbox</RouterLink>
                     </li>
                 </ul>
