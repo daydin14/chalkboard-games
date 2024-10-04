@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import TicTacToe from './pages/TicTacToe';
 import HangmanPage from './pages/HangmanPage';
+import Connect4Page from './pages/Connect4Page';
 import Sandbox from './pages/Sandbox';
 
 const AppRoutes = () => {
@@ -15,6 +16,7 @@ const AppRoutes = () => {
                 <Route exact path="/" element={<Home />} />
                 <Route path="/tic-tac-toe" element={<TicTacToe />} />
                 <Route path="/hangman" element={<HangmanPage />} />
+                <Route path="/connect4" element={<Connect4Page />} />
                 {process.env.NODE_ENV === 'development' && (
                     <Route path="/sandbox" element={<Sandbox />} />
                 )}

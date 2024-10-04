@@ -17,6 +17,9 @@ const NavMenu = () => {
                         <RouterLink to="/hangman">Hangman</RouterLink>
                     </li>
                     <li>
+                        <RouterLink to="/connect4">Connect 4</RouterLink>
+                    </li>
+                    <li>
                         <RouterLink to="/sandbox">Sandbox</RouterLink>
                     </li>
                 </ul>
