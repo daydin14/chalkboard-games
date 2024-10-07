@@ -85,17 +85,17 @@ function Game() {
     }
 
     return (
-        <div className="game flex flex-col items-center">
+        <div className="flex flex-col items-center">
             <button className="mb-4 px-4 py-2 bg-red-500 text-white rounded" onClick={resetGame}>Reset Game</button>
             <div className="flex">
-                <div className="game-info mr-4">
-                    <div className="status mb-2 text-lg font-bold">{status}</div>
-                    <ol className="moves list-none p-0">{moves}</ol>
+                <div className="mr-4">
+                    <div className="mb-2 text-lg font-bold">{status}</div>
+                    <ol className="list-none p-0">{moves}</ol>
                 </div>
-                <div className="game-board mb-4">
+                <div className="mb-4">
                     <Board squares={current.squares} onClick={handleClick} />
                 </div>
-                <div className="score ml-4">
+                <div className="ml-4">
                     <div className="text-lg font-bold mb-2">Score</div>
                     <div>X Wins: {xWins}</div>
                     <div>O Wins: {oWins}</div>
