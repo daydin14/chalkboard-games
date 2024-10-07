@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 function Keyboard({ onLetterClick, guessedLetters, onColorChange, disabled }) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -12,19 +12,19 @@ function Keyboard({ onLetterClick, guessedLetters, onColorChange, disabled }) {
         onColorChange(newColor); // Call the onColorChange prop
     };
 
-    const handleKeyPress = (event) => {
+    const handleKeyPress = useCallback((event) => {
         const letter = event.key.toLowerCase();
         if (alphabet.includes(letter) && !guessedLetters.includes(letter) && !disabled) {
             onLetterClick(letter);
         }
-    };
+    }, [alphabet, guessedLetters, disabled, onLetterClick]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyPress);
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
         };
-    }, [guessedLetters, disabled]);
+    }, [handleKeyPress]);
 
     return (
         <div className="grid grid-cols-7 gap-2">
