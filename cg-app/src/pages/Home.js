@@ -9,7 +9,7 @@ const games = [
     { name: 'Tic-Tac-Toe', description: 'A classic game of Xs and Os.', link: '/tic-tac-toe' },
     { name: 'Hangman', description: 'Guess the word before you run out of attempts.', link: '/hangman' },
     { name: 'Connect 4', description: 'A two-player game of strategy.', link: '/connect4' },
-    { name: 'Memory', description: 'Match the pairs of cards.', link: '/memory' },
+    { name: 'Memory Matching', description: 'Match the pairs of cards.', link: '/memory' },
 
     // { name: 'Dots', description: 'Connect the dots to create squares.', link: '/dots' },
     // { name: 'Snake', description: 'Eat the food and grow the snake.', link: '/snake' },
