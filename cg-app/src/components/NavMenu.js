@@ -29,11 +29,16 @@ if (process.env.NODE_ENV === 'development') {
 const NavMenu = () => {
     return (
         <>
-            <nav>
-                <ul>
+            <nav className="bg-gray-800 p-4">
+                <ul className="flex space-x-2">
                     {links.map((link) => (
                         <li key={link.path}>
-                            <RouterLink to={link.path}>{link.label}</RouterLink>
+                            <RouterLink
+                                to={link.path}
+                                className="text-white hover:text-gray-400"
+                            >
+                                {link.label}
+                            </RouterLink>
                         </li>
                     ))}
                 </ul>

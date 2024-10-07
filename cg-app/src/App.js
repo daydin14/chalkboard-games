@@ -13,13 +13,15 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      <Router basename='/chalkboard-games'>
-        <Header />
-        <main>
-          <Routes />
-        </main>
-        <Footer />
-      </Router>
+      <div className="flex flex-col min-h-screen">
+        <Router basename='/chalkboard-games'>
+          <Header />
+          <main className="flex-grow p-4">
+            <Routes />
+          </main>
+          <Footer />
+        </Router>
+      </div>
     </>
   );
 }
