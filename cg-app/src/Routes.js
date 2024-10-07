@@ -5,8 +5,8 @@ import { Routes, Route } from 'react-router-dom';
 // Pages
 import Home from './pages/Home';
 import TicTacToe from './pages/TicTacToe';
-import HangmanPage from './pages/HangmanPage';
-import Connect4Page from './pages/Connect4Page';
+import Hangman from './pages/Hangman';
+import Connect4 from './pages/Connect4';
 import DotsGamePage from './pages/DotsGamePage';
 import MemoryGamePage from './pages/MemoryGamePage';
 import SnakeGamePage from './pages/SnakeGamePage';
@@ -24,8 +24,9 @@ import Sandbox from './pages/Sandbox';
 const pages = [
     { path: '/', component: <Home /> },
     { path: '/tic-tac-toe', component: <TicTacToe /> },
-    { path: '/hangman', component: <HangmanPage /> },
-    { path: '/connect4', component: <Connect4Page /> },
+    { path: '/hangman', component: <Hangman /> },
+    { path: '/connect4', component: <Connect4 /> },
+
     { path: '/dots', component: <DotsGamePage /> },
     { path: '/memory', component: <MemoryGamePage /> },
     { path: '/snake', component: <SnakeGamePage /> },
