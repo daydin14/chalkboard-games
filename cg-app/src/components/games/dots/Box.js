@@ -1,9 +1,13 @@
 import React from 'react';
 
-function Box({ owner }) {
+const Box = ({ id, x, y, zIndex }) => {
     return (
-        <div className={`box ${owner ? owner : ''}`}></div>
+        <div
+            className="absolute w-12 h-12 bg-white"
+            data-id={id}
+            style={{ zIndex, left: `${x}px`, top: `${y}px` }}
+        ></div>
     );
-}
+};
 
 export default Box;

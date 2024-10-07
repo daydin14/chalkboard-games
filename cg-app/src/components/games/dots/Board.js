@@ -1,42 +1,23 @@
 import React from 'react';
-import Dot from './Dot';
-import Line from './Line';
 import Box from './Box';
+import Line from './Line';
+import Dot from './Dot';
 
-function Board({ board, onLineClick }) {
+const Board = ({ elements }) => {
     return (
-        <div className="board">
-            {board.map((row, rowIndex) => (
-                <div key={rowIndex} className="board-row">
-                    {row.map((cell, colIndex) => (
-                        <React.Fragment key={colIndex}>
-                            <Dot />
-                            {cell.horizontal && (
-                                <Line
-                                    orientation="horizontal"
-                                    onClick={() => onLineClick(rowIndex, colIndex, 'horizontal')}
-                                />
-                            )}
-                            {cell.box && <Box owner={cell.box} />}
-                        </React.Fragment>
-                    ))}
-                    <Dot />
-                </div>
-            ))}
-            <div className="board-row">
-                {board[0].map((_, colIndex) => (
-                    <React.Fragment key={colIndex}>
-                        <Dot />
-                        <Line
-                            orientation="horizontal"
-                            onClick={() => onLineClick(board.length, colIndex, 'horizontal')}
-                        />
-                    </React.Fragment>
-                ))}
-                <Dot />
-            </div>
+        <div className="relative">
+            {elements.map((element, index) => {
+                if (element.type === 'box') {
+                    return <Box key={index} {...element} />;
+                } else if (element.type === 'lineh' || element.type === 'linev') {
+                    return <Line key={index} {...element} />;
+                } else if (element.type === 'dot') {
+                    return <Dot key={index} {...element} />;
+                }
+                return null;
+            })}
         </div>
     );
-}
+};
 
 export default Board;

@@ -2,12 +2,13 @@
 import React from 'react';
 
 // Components
-import Game from '../components/games/dots2/Game';
 
 const Sandbox = () => {
 
     return (
-        <Game />
+        <>
+            <h1 className="text-3xl font-bold mb-4 text-center">Sandbox</h1>
+        </>
     );
 };
 
