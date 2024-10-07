@@ -4,16 +4,17 @@ import { Routes, Route } from 'react-router-dom';
 
 // Pages
 import Home from './pages/Home';
+import RockPaperScissors from './pages/RockPaperScissor';
 import TicTacToe from './pages/TicTacToe';
 import Hangman from './pages/Hangman';
 import Connect4 from './pages/Connect4';
+
 import DotsGamePage from './pages/DotsGamePage';
 import MemoryGamePage from './pages/MemoryGamePage';
 import SnakeGamePage from './pages/SnakeGamePage';
 import MinesweeperGamePage from './pages/MinesweeperGamePage';
 import SimonSaysGamePage from './pages/SimonSaysGamePage';
 import CheckersGamePage from './pages/CheckersGamePage';
-import RockPaperScissorsGamePage from './pages/RockPaperScissorGamePage';
 import SudokuGamePage from './pages/SudokuGamePage';
 import WordSearchGamePage from './pages/WordSearchGamePage';
 import BattleshipGamePage from './pages/BattleShipGamePage';
@@ -23,6 +24,7 @@ import Sandbox from './pages/Sandbox';
 // Routes
 const pages = [
     { path: '/', component: <Home /> },
+    { path: '/rock-paper-scissors', component: <RockPaperScissors /> },
     { path: '/tic-tac-toe', component: <TicTacToe /> },
     { path: '/hangman', component: <Hangman /> },
     { path: '/connect4', component: <Connect4 /> },
@@ -33,7 +35,6 @@ const pages = [
     { path: '/minesweeper', component: <MinesweeperGamePage /> },
     { path: '/simon-says', component: <SimonSaysGamePage /> },
     { path: '/checkers', component: <CheckersGamePage /> },
-    { path: '/rock-paper-scissors', component: <RockPaperScissorsGamePage /> },
     { path: '/sudoku', component: <SudokuGamePage /> },
     { path: '/word-search', component: <WordSearchGamePage /> },
     { path: '/battle-ship', component: <BattleshipGamePage /> },
