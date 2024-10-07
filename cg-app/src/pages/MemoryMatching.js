@@ -1,4 +1,7 @@
+// Dependencies
 import React from 'react';
+
+// Components
 import Game from '../components/games/memory-matching/Game';
 
 function MemoryMatching() {

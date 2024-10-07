@@ -26,11 +26,11 @@ function Game() {
         if (flippedIndices.length === 2) {
             const [firstIndex, secondIndex] = flippedIndices;
             if (cards[firstIndex] === cards[secondIndex]) {
-                setMatchedIndices([...matchedIndices, firstIndex, secondIndex]);
+                setMatchedIndices((prev) => [...prev, firstIndex, secondIndex]);
             }
             setTimeout(() => setFlippedIndices([]), 1000);
         }
-    }, [flippedIndices, cards, matchedIndices]);
+    }, [flippedIndices, cards]);
 
     const handleCardClick = (index) => {
         if (flippedIndices.length < 2 && !flippedIndices.includes(index) && !matchedIndices.includes(index)) {
@@ -46,12 +46,6 @@ function Game() {
 
     return (
         <div className="flex flex-col items-center">
-            <button
-                onClick={resetGame}
-                className="mb-4 p-2 bg-red-500 text-white font-bold rounded hover:bg-red-700 transition-colors duration-200"
-            >
-                Reset Game
-            </button>
             <div className="grid grid-cols-4 gap-4">
                 {cards.map((value, index) => (
                     <Card
@@ -62,6 +56,12 @@ function Game() {
                     />
                 ))}
             </div>
+            <button
+                onClick={resetGame}
+                className="mt-4 p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition-colors duration-200"
+            >
+                Reset Game
+            </button>
         </div>
     );
 }
