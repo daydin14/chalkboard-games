@@ -1,9 +1,12 @@
+// Dependencies
 import React, { useState } from 'react';
+
+// Components
 import Board from './Board';
 
 const initialBoard = Array.from({ length: 10 }, () => Array(10).fill(''));
 
-function BattleshipGame() {
+function Game() {
     const [board, setBoard] = useState(initialBoard);
     const [ships, setShips] = useState([
         { size: 5, positions: [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4]] },
@@ -26,11 +29,10 @@ function BattleshipGame() {
     };
 
     return (
-        <div className="battleship-game">
-            <h1>Battleship Game</h1>
+        <div className="flex justify-center items-center">
             <Board board={board} onCellClick={handleCellClick} />
         </div>
     );
 }
 
-export default BattleshipGame;
+export default Game;
