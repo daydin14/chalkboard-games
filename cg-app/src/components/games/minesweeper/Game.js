@@ -1,11 +1,14 @@
+// Dependencies
 import React, { useState, useEffect } from 'react';
+
+// Components
 import Board from './Board';
 
 const ROWS = 10;
 const COLS = 10;
 const MINES = 10;
 
-function MinesweeperGame() {
+function Game() {
     const [board, setBoard] = useState(createBoard());
     const [gameOver, setGameOver] = useState(false);
 
@@ -35,10 +38,20 @@ function MinesweeperGame() {
         setBoard(newBoard);
     };
 
+    const resetGame = () => {
+        setBoard(createBoard());
+        setGameOver(false);
+    };
+
     return (
-        <div className="minesweeper-game">
-            <h1>Minesweeper Game</h1>
+        <div className="flex flex-col items-center">
             <Board board={board} onCellClick={handleCellClick} onCellRightClick={handleCellRightClick} />
+            <button
+                onClick={resetGame}
+                className="mt-4 p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition-colors duration-200"
+            >
+                Reset Game
+            </button>
         </div>
     );
 }
@@ -120,4 +133,4 @@ function revealCell(board, row, col) {
     }
 }
 
-export default MinesweeperGame;
+export default Game;
