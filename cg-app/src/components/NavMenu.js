@@ -2,38 +2,21 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-// Navigation Links
-const links = [
-    // { path: "/", label: "Home" },
-    { path: '/battle-ship', label: 'Battle Ship' },
-    { path: "/connect4", label: "Connect4" },
-    { path: "/dots", label: "Dots" },
-    { path: "/hangman", label: "Hangman" },
-    { path: "/memory", label: "Memory" },
-    { path: "/minesweeper", label: "Minesweeper" },
-    { path: "/rock-paper-scissors", label: "Rock-Paper-Scissors" },
-    { path: "/simon-says", label: "Simon-Says" },
-    { path: "/snake", label: "Snake" },
-    { path: "/tic-tac-toe", label: "TicTacToe" },
-];
-
-// Conditionally add the Sandbox link in development mode
-if (process.env.NODE_ENV === 'development') {
-    links.push({ path: "/sandbox", label: "Sandbox" });
-}
+// Constants
+import Games from '../constants/Games';
 
 const NavMenu = () => {
     return (
         <>
             <nav className="bg-gray-800 p-4">
                 <ul className="flex space-x-2">
-                    {links.map((link) => (
-                        <li key={link.path}>
+                    {Games.filter(game => game.environemnt !== 'development' && game.link !== '/').map((link) => (
+                        <li key={link.id}>
                             <RouterLink
-                                to={link.path}
+                                to={link.link}
                                 className="text-white hover:text-gray-400"
                             >
-                                {link.label}
+                                {link.title}
                             </RouterLink>
                         </li>
                     ))}
