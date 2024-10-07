@@ -2,16 +2,16 @@
 import React from 'react';
 
 // Components
-import Hangman from '../components/games/hangman/Hangman';
+import Game from '../components/games/hangman/Game';
 
-function HangmanPage() {
+function Hangman() {
     return (
         <>
             <h1 className="text-3xl font-bold mb-4 text-center">Hangman Game</h1>
             <h4 className="text-lg mb-2 text-center">Can you guess the word with 6 tries?</h4>
-            <Hangman />
+            <Game />
         </>
     );
 }
 
-export default HangmanPage;
+export default Hangman;

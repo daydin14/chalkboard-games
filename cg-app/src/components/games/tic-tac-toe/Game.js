@@ -85,8 +85,12 @@ function Game() {
     }
 
     return (
-        <div className="flex flex-col items-center">
-            <button className="mb-4 px-4 py-2 bg-red-500 text-white rounded" onClick={resetGame}>Reset Game</button>
+        <div className="flex flex-col items-center justify-center">
+            {(winner || stepNumber > 0) && (
+                <button className="mb-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors duration-200" onClick={resetGame}>
+                    Reset Game
+                </button>
+            )}
             <div className="flex">
                 <div className="mr-4">
                     <div className="mb-2 text-lg font-bold">{status}</div>
