@@ -3,7 +3,7 @@ import ChoiceButton from './ChoiceButton';
 
 const choices = ['rock', 'paper', 'scissors'];
 
-function RockPaperScissorsGame() {
+function Game() {
     const [playerChoice, setPlayerChoice] = useState(null);
     const [computerChoice, setComputerChoice] = useState(null);
     const [result, setResult] = useState('');
@@ -28,22 +28,21 @@ function RockPaperScissorsGame() {
     };
 
     return (
-        <div className="rock-paper-scissors-game">
-            <h1>Rock, Paper, Scissors</h1>
-            <div className="choices">
+        <div className="flex flex-col items-center justify-center">
+            <div className="flex space-x-4 mb-8">
                 {choices.map((choice) => (
                     <ChoiceButton key={choice} choice={choice} onClick={handleChoiceClick} />
                 ))}
             </div>
             {playerChoice && (
-                <div className="result">
-                    <p>You chose: {playerChoice}</p>
-                    <p>Computer chose: {computerChoice}</p>
-                    <p>{result}</p>
+                <div className="text-center bg-gray-600 p-8 rounded-lg shadow-md w-80">
+                    <p className="text-lg font-semibold">You chose: {playerChoice}</p>
+                    <p className="text-lg font-semibold">Computer chose: {computerChoice}</p>
+                    <p className="text-xl font-bold mt-4">{result}</p>
                 </div>
             )}
         </div>
     );
 }
 
-export default RockPaperScissorsGame;
+export default Game;
