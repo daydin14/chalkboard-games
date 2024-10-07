@@ -1,3 +1,4 @@
+// Dependencies
 import React, { useState, useEffect } from 'react';
 
 function Keyboard({ onLetterClick, guessedLetters, onColorChange, disabled }) {

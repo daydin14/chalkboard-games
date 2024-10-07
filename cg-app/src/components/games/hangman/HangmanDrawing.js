@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// Dependencies
+import React from 'react';
 
 function HangmanDrawing({ incorrectGuesses, color }) {
 

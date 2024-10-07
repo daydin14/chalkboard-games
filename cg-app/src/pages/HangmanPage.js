@@ -1,4 +1,7 @@
+// Dependencies
 import React from 'react';
+
+// Components
 import Hangman from '../components/games/hangman/Hangman';
 
 function HangmanPage() {
