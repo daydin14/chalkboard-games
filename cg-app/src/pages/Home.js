@@ -12,15 +12,11 @@ const games = [
     { name: 'Memory Matching', description: 'Match the pairs of cards.', link: '/memory' },
     { name: 'Minesweeper', description: 'Clear the minefield without detonating a mine.', link: '/minesweeper' },
     { name: 'Snake', description: 'Eat the apples and grow the snake.', link: '/snake' },
+    { name: 'Simon Says', description: 'Repeat the pattern of colors.', link: '/simon-says' },
 
     // WIP Games
     // { name: 'Dots', description: 'Connect the dots to create squares.', link: '/dots' },
-    // { name: 'Simon Says', description: 'Repeat the pattern of lights and sounds.', link: '/simon-says' },
-    // { name: 'Checkers', description: 'Capture all of your opponent\'s pieces.', link: '/checkers' },
-    // { name: 'Sudoku', description: 'Fill in the grid so that every row, column, and 3x3 box contains the digits 1-9.', link: '/sudoku' },
-    // { name: 'Word Search', description: 'Find the words hidden in the grid.', link: '/word-search' },
     // { name: 'Battle Ship', description: 'Sink your opponent\'s fleet.', link: '/battle-ship' },
-    // { name: 'Chess', description: 'Capture the king.', link: '/chess' }
 ];
 
 const Home = () => {

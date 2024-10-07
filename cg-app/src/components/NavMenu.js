@@ -12,15 +12,11 @@ const links = [
     { path: "/memory", label: "Memory" },
     { path: "/minesweeper", label: "Minesweeper" },
     { path: "/snake", label: "Snake" },
+    { path: "/simon-says", label: "Simon-Says" },
 
     // WIP Links
     // { path: "/dots", label: "Dots" },
-    // { path: "/simon-says", label: "Simon Says" },
-    // { path: "/checkers", label: "Checkers" },
-    // { path: "/sudoku", label: "Sudoku" },
-    // { path: '/word-search', label: 'Word Search' },
     // { path: '/battle-ship', label: 'Battle Ship' },
-    // { path: '/chess', label: 'Chess' }
 ];
 
 // Conditionally add the Sandbox link in development mode
