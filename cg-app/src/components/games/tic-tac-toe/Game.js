@@ -4,63 +4,6 @@ import React, { useState } from 'react';
 // Components
 import Board from './Board';
 
-function Game() {
-    const [history, setHistory] = useState([{ squares: Array(9).fill(null) }]);
-    const [stepNumber, setStepNumber] = useState(0);
-    const [xIsNext, setXIsNext] = useState(true);
-
-    const current = history[stepNumber];
-    const winner = calculateWinner(current.squares);
-
-    const handleClick = (i) => {
-        const historyCopy = history.slice(0, stepNumber + 1);
-        const currentCopy = historyCopy[historyCopy.length - 1];
-        const squares = currentCopy.squares.slice();
-
-        if (winner || squares[i]) {
-            return;
-        }
-
-        squares[i] = xIsNext ? 'X' : 'O';
-        setHistory(historyCopy.concat([{ squares }]));
-        setStepNumber(historyCopy.length);
-        setXIsNext(!xIsNext);
-    };
-
-    const jumpTo = (step) => {
-        setStepNumber(step);
-        setXIsNext(step % 2 === 0);
-    };
-
-    const moves = history.map((step, move) => {
-        const desc = move ? 'Go to move #' + move : 'Go to game start';
-        return (
-            <li key={move}>
-                <button onClick={() => jumpTo(move)}>{desc}</button>
-            </li>
-        );
-    });
-
-    let status;
-    if (winner) {
-        status = 'Winner: ' + winner;
-    } else {
-        status = 'Next player: ' + (xIsNext ? 'X' : 'O');
-    }
-
-    return (
-        <div className="game">
-            <div className="game-board">
-                <Board squares={current.squares} onClick={handleClick} />
-            </div>
-            <div className="game-info">
-                <div>{status}</div>
-                <ol>{moves}</ol>
-            </div>
-        </div>
-    );
-}
-
 function calculateWinner(squares) {
     const lines = [
         [0, 1, 2],
@@ -79,6 +22,87 @@ function calculateWinner(squares) {
         }
     }
     return null;
+}
+
+function Game() {
+    const [history, setHistory] = useState([{ squares: Array(9).fill(null) }]);
+    const [stepNumber, setStepNumber] = useState(0);
+    const [xIsNext, setXIsNext] = useState(true);
+    const [xWins, setXWins] = useState(0);
+    const [oWins, setOWins] = useState(0);
+
+    const current = history[stepNumber];
+    const winner = calculateWinner(current.squares);
+
+    const handleClick = (i) => {
+        const historyCopy = history.slice(0, stepNumber + 1);
+        const currentCopy = historyCopy[historyCopy.length - 1];
+        const squares = currentCopy.squares.slice();
+
+        if (winner || squares[i]) {
+            return;
+        }
+
+        squares[i] = xIsNext ? 'X' : 'O';
+        setHistory(historyCopy.concat([{ squares }]));
+        setStepNumber(historyCopy.length);
+        setXIsNext(!xIsNext);
+
+        if (calculateWinner(squares)) {
+            if (xIsNext) {
+                setXWins(xWins + 1);
+            } else {
+                setOWins(oWins + 1);
+            }
+        }
+    };
+
+    const jumpTo = (step) => {
+        setStepNumber(step);
+        setXIsNext(step % 2 === 0);
+    };
+
+    const resetGame = () => {
+        setHistory([{ squares: Array(9).fill(null) }]);
+        setStepNumber(0);
+        setXIsNext(true);
+    };
+
+    const moves = history.map((step, move) => {
+        const desc = move ? `Go to move #${move}` : 'Go to game start';
+        return (
+            <li key={move}>
+                <button onClick={() => jumpTo(move)}>{desc}</button>
+            </li>
+        );
+    });
+
+    let status;
+    if (winner) {
+        status = `Winner: ${winner}`;
+    } else {
+        status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+    }
+
+    return (
+        <div className="game flex flex-col items-center">
+            <button className="mb-4 px-4 py-2 bg-red-500 text-white rounded" onClick={resetGame}>Reset Game</button>
+            <div className="flex">
+                <div className="game-info mr-4">
+                    <div className="status mb-2 text-lg font-bold">{status}</div>
+                    <ol className="moves list-none p-0">{moves}</ol>
+                </div>
+                <div className="game-board mb-4">
+                    <Board squares={current.squares} onClick={handleClick} />
+                </div>
+                <div className="score ml-4">
+                    <div className="text-lg font-bold mb-2">Score</div>
+                    <div>X Wins: {xWins}</div>
+                    <div>O Wins: {oWins}</div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default Game;
