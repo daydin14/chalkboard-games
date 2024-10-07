@@ -13,10 +13,20 @@ const games = [
     { name: 'Minesweeper', description: 'Clear the minefield without detonating a mine.', link: '/minesweeper' },
     { name: 'Snake', description: 'Eat the apples and grow the snake.', link: '/snake' },
     { name: 'Simon Says', description: 'Repeat the pattern of colors.', link: '/simon-says' },
+    { name: 'Dots', description: 'Connect the dots to create squares.', link: '/dots' },
+    { name: 'Battle Ship', description: 'Sink your opponent\'s fleet.', link: '/battle-ship' },
 
-    // WIP Games
-    // { name: 'Dots', description: 'Connect the dots to create squares.', link: '/dots' },
+    // Alphabetical Order:
     // { name: 'Battle Ship', description: 'Sink your opponent\'s fleet.', link: '/battle-ship' },
+    // { name: 'Connect 4', description: 'A two-player game of strategy.', link: '/connect4' },
+    // { name: 'Dots', description: 'Connect the dots to create squares.', link: '/dots' },
+    // { name: 'Hangman', description: 'Guess the word before you run out of attempts.', link: '/hangman' },
+    // { name: 'Memory Matching', description: 'Match the pairs of cards.', link: '/memory' },
+    // { name: 'Minesweeper', description: 'Clear the minefield without detonating a mine.', link: '/minesweeper' },
+    // { name: 'Rock Paper Scissors', description: 'A classic game of chance.', link: '/rock-paper-scissors' },
+    // { name: 'Simon Says', description: 'Repeat the pattern of colors.', link: '/simon-says' },
+    // { name: 'Snake', description: 'Eat the apples and grow the snake.', link: '/snake' },
+    // { name: 'Tic-Tac-Toe', description: 'A classic game of Xs and Os.', link: '/tic-tac-toe' },
 ];
 
 const Home = () => {

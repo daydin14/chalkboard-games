@@ -4,19 +4,17 @@ import { Link as RouterLink } from 'react-router-dom';
 
 // Navigation Links
 const links = [
-    { path: "/", label: "Home" },
-    { path: "/rock-paper-scissors", label: "Rock-Paper-Scissors" },
-    { path: "/tic-tac-toe", label: "TicTacToe" },
-    { path: "/hangman", label: "Hangman" },
+    // { path: "/", label: "Home" },
+    { path: '/battle-ship', label: 'Battle Ship' },
     { path: "/connect4", label: "Connect4" },
+    { path: "/dots", label: "Dots" },
+    { path: "/hangman", label: "Hangman" },
     { path: "/memory", label: "Memory" },
     { path: "/minesweeper", label: "Minesweeper" },
-    { path: "/snake", label: "Snake" },
+    { path: "/rock-paper-scissors", label: "Rock-Paper-Scissors" },
     { path: "/simon-says", label: "Simon-Says" },
-
-    // WIP Links
-    // { path: "/dots", label: "Dots" },
-    // { path: '/battle-ship', label: 'Battle Ship' },
+    { path: "/snake", label: "Snake" },
+    { path: "/tic-tac-toe", label: "TicTacToe" },
 ];
 
 // Conditionally add the Sandbox link in development mode

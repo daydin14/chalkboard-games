@@ -1,12 +1,14 @@
 // Dependencies
-import React from 'react'
+import React from 'react';
+
+// Components
+import Game from '../components/games/dots2/Game';
 
 const Sandbox = () => {
+
     return (
-        <>
-            <h1>Sandbox</h1>
-        </>
-    )
-}
+        <Game />
+    );
+};
 
 export default Sandbox

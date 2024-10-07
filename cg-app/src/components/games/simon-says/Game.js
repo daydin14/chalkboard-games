@@ -14,13 +14,6 @@ function Game() {
     const [message, setMessage] = useState('Press Start to Play');
     const [clickedColor, setClickedColor] = useState(null);
 
-    const addColorToSequence = useCallback(() => {
-        const newColor = COLORS[Math.floor(Math.random() * COLORS.length)];
-        setSequence((prevSequence) => [...prevSequence, newColor]);
-        setMessage('Watch the sequence...');
-        playSequence([...sequence, newColor]);
-    }, [sequence]);
-
     const playSequence = useCallback((sequence) => {
         sequence.forEach((color, index) => {
             setTimeout(() => {
@@ -33,6 +26,13 @@ function Game() {
             setMessage('Your turn...');
         }, sequence.length * 1000 + 500);
     }, []);
+
+    const addColorToSequence = useCallback(() => {
+        const newColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+        setSequence((prevSequence) => [...prevSequence, newColor]);
+        setMessage('Watch the sequence...');
+        playSequence([...sequence, newColor]);
+    }, [sequence, playSequence]);
 
     useEffect(() => {
         if (userSequence.length === sequence.length && isUserTurn) {
