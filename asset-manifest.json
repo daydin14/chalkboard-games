@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/chalkboard-games/static/css/main.79d93e8f.css",
-    "main.js": "/chalkboard-games/static/js/main.5fd30b51.js",
+    "main.css": "/chalkboard-games/static/css/main.98289b40.css",
+    "main.js": "/chalkboard-games/static/js/main.6e84d2f0.js",
     "static/js/453.184a19d0.chunk.js": "/chalkboard-games/static/js/453.184a19d0.chunk.js",
     "index.html": "/chalkboard-games/index.html",
-    "main.79d93e8f.css.map": "/chalkboard-games/static/css/main.79d93e8f.css.map",
-    "main.5fd30b51.js.map": "/chalkboard-games/static/js/main.5fd30b51.js.map",
+    "main.98289b40.css.map": "/chalkboard-games/static/css/main.98289b40.css.map",
+    "main.6e84d2f0.js.map": "/chalkboard-games/static/js/main.6e84d2f0.js.map",
     "453.184a19d0.chunk.js.map": "/chalkboard-games/static/js/453.184a19d0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.79d93e8f.css",
-    "static/js/main.5fd30b51.js"
+    "static/css/main.98289b40.css",
+    "static/js/main.6e84d2f0.js"
   ]
 }
