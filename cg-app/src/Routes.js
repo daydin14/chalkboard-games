@@ -10,10 +10,10 @@ import Hangman from './pages/Hangman';
 import Connect4 from './pages/Connect4';
 import MemoryMatching from './pages/MemoryMatching';
 import Minesweeper from './pages/Minesweeper';
+import Snake from './pages/Snake';
 
 // WIP Pages
 import DotsGamePage from './pages/DotsGamePage';
-import SnakeGamePage from './pages/SnakeGamePage';
 import SimonSaysGamePage from './pages/SimonSaysGamePage';
 import CheckersGamePage from './pages/CheckersGamePage';
 import SudokuGamePage from './pages/SudokuGamePage';
@@ -31,9 +31,9 @@ const pages = [
     { path: '/connect4', component: <Connect4 /> },
     { path: '/memory', component: <MemoryMatching /> },
     { path: '/minesweeper', component: <Minesweeper /> },
+    { path: '/snake', component: <Snake /> },
 
     { path: '/dots', component: <DotsGamePage /> },
-    { path: '/snake', component: <SnakeGamePage /> },
     { path: '/simon-says', component: <SimonSaysGamePage /> },
     { path: '/checkers', component: <CheckersGamePage /> },
     { path: '/sudoku', component: <SudokuGamePage /> },
