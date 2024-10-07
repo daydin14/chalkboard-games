@@ -43,8 +43,8 @@ const AppRoutes = () => {
             <Routes>
                 {pages.map((page) => (
                     page.path === '/'
-                        ? <Route exact path={page.path} element={page.component} />
-                        : <Route path={page.path} element={page.component} />
+                        ? <Route key={page.path} exact path={page.path} element={page.component} />
+                        : <Route key={page.path} path={page.path} element={page.component} />
                 ))}
             </Routes>
         </>
