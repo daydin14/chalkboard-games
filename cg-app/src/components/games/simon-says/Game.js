@@ -67,14 +67,14 @@ function Game() {
 
     return (
         <div className="flex flex-col items-center justify-center">
-            <Board colors={COLORS} onButtonClick={handleButtonClick} activeColor={activeColor} clickedColor={clickedColor} />
-            <div className="mt-4 text-xl">{message}</div>
             <button
                 onClick={handleStart}
-                className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300"
+                className="mb-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300"
             >
                 Start
             </button>
+            <div className="mb-4 text-xl">{message}</div>
+            <Board colors={COLORS} onButtonClick={handleButtonClick} activeColor={activeColor} clickedColor={clickedColor} />
         </div>
     );
 }

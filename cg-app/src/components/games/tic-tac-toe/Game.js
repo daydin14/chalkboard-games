@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 // Components
 import Board from './Board';
 
+// Hooks
+import useIsMobile from '../../../hooks/useIsMobile';
+
 function calculateWinner(squares) {
     const lines = [
         [0, 1, 2],
@@ -30,6 +33,7 @@ function Game() {
     const [xIsNext, setXIsNext] = useState(true);
     const [xWins, setXWins] = useState(0);
     const [oWins, setOWins] = useState(0);
+    const isMobile = useIsMobile();
 
     const current = history[stepNumber];
     const winner = calculateWinner(current.squares);
@@ -85,24 +89,31 @@ function Game() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center">
-            {(winner || stepNumber > 0) && (
+        <div className={`flex flex-col items-center justify-center ${isMobile ? 'p-4' : ''}`}>
+            {!isMobile ?
                 <button className="mb-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors duration-200" onClick={resetGame}>
                     Reset Game
                 </button>
-            )}
-            <div className="flex">
-                <div className="mr-4">
+                : null
+            }
+            <div className={`flex ${isMobile ? 'flex-col-reverse' : ''}`}>
+                <div className={`${isMobile ? 'mb-4' : 'mr-4'}`}>
                     <div className="mb-2 text-lg font-bold">{status}</div>
                     <ol className="list-none p-0">{moves}</ol>
                 </div>
                 <div className="mb-4">
                     <Board squares={current.squares} onClick={handleClick} />
                 </div>
-                <div className="ml-4">
+                <div className={`${isMobile ? 'mb-4' : 'ml-4'}`}>
                     <div className="text-lg font-bold mb-2">Score</div>
                     <div>X Wins: {xWins}</div>
                     <div>O Wins: {oWins}</div>
+                    {isMobile ?
+                        <button className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors duration-200" onClick={resetGame}>
+                            Reset Game
+                        </button>
+                        : null
+                    }
                 </div>
             </div>
         </div>

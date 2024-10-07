@@ -20,7 +20,7 @@ function Button({ color, onClick, isActive, isClicked, isCircle }) {
         <div
             className={`
                 ${isClicked ? clickedColorClasses[color] : colorClasses[color]} 
-                ${isActive ? 'ring-4 ring-yellow-500' : 'ring-4 ring-gray-500'} 
+                ${isActive ? 'ring-4 ring-gray-100' : 'ring-4 ring-gray-500'} 
                 ${isCircle ? 'rounded-full' : 'rounded'} 
                 w-28 h-28 m-4 
                 cursor-pointer

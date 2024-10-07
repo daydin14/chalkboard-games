@@ -4,6 +4,9 @@ import React, { useState, useEffect } from 'react';
 // Components
 import Board from './Board';
 
+// Hooks
+import useIsMobile from '../../../hooks/useIsMobile';
+
 const ROWS = 20;
 const COLS = 20;
 const DIRECTIONS = {
@@ -13,12 +16,31 @@ const DIRECTIONS = {
     ArrowRight: { row: 0, col: 1 },
 };
 
+function createBoard() {
+    return Array.from({ length: ROWS }, () => Array(COLS).fill(''));
+}
+
+function generateFood(snake) {
+    let newFood;
+    const isFoodOnSnake = (food) => snake.some((segment) => segment.row === food.row && segment.col === food.col);
+
+    do {
+        newFood = {
+            row: Math.floor(Math.random() * ROWS),
+            col: Math.floor(Math.random() * COLS),
+        };
+    } while (isFoodOnSnake(newFood));
+
+    return newFood;
+}
+
 function Game() {
     const [board, setBoard] = useState(createBoard());
     const [snake, setSnake] = useState([{ row: 10, col: 10 }]);
     const [direction, setDirection] = useState(DIRECTIONS.ArrowRight);
     const [food, setFood] = useState(generateFood([{ row: 10, col: 10 }]));
     const [gameOver, setGameOver] = useState(false);
+    const isMobile = useIsMobile();
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -79,6 +101,53 @@ function Game() {
         setBoard(newBoard);
     }, [snake, food]);
 
+    useEffect(() => {
+        if (!isMobile) return;
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        const handleTouchStart = (event) => {
+            touchStartX = event.touches[0].clientX;
+            touchStartY = event.touches[0].clientY;
+        };
+
+        const handleTouchEnd = (event) => {
+            touchEndX = event.changedTouches[0].clientX;
+            touchEndY = event.changedTouches[0].clientY;
+            handleSwipe();
+        };
+
+        const handleSwipe = () => {
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                if (deltaX > 0) {
+                    setDirection(DIRECTIONS.ArrowRight);
+                } else {
+                    setDirection(DIRECTIONS.ArrowLeft);
+                }
+            } else {
+                if (deltaY > 0) {
+                    setDirection(DIRECTIONS.ArrowDown);
+                } else {
+                    setDirection(DIRECTIONS.ArrowUp);
+                }
+            }
+        };
+
+        window.addEventListener('touchstart', handleTouchStart);
+        window.addEventListener('touchend', handleTouchEnd);
+
+        return () => {
+            window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchend', handleTouchEnd);
+        };
+    }, [isMobile]);
+
     const resetGame = () => {
         setBoard(createBoard());
         setSnake([{ row: 10, col: 10 }]);
@@ -89,34 +158,16 @@ function Game() {
 
     return (
         <div className="flex flex-col items-center">
-            <Board board={board} />
-            {gameOver && <div className="text-red-500 font-bold">Game Over</div>}
             <button
                 onClick={resetGame}
-                className="mt-4 p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition-colors duration-200"
+                className="mb-4 p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition-colors duration-200"
             >
                 Reset Game
             </button>
+            <Board board={board} />
+            {gameOver && <div className="text-red-500 font-bold">Game Over</div>}
         </div>
     );
-}
-
-function createBoard() {
-    return Array.from({ length: ROWS }, () => Array(COLS).fill(''));
-}
-
-function generateFood(snake) {
-    let newFood;
-    const isFoodOnSnake = (food) => snake.some((segment) => segment.row === food.row && segment.col === food.col);
-
-    do {
-        newFood = {
-            row: Math.floor(Math.random() * ROWS),
-            col: Math.floor(Math.random() * COLS),
-        };
-    } while (isFoodOnSnake(newFood));
-
-    return newFood;
 }
 
 export default Game;
