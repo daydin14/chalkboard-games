@@ -8,6 +8,7 @@ function RockPaperScissors() {
     return (
         <>
             <h1 className="text-4xl font-bold mb-8 text-center">Rock, Paper, Scissors Game</h1>
+            <h4 className="text-lg mb-2 text-center">Take a chance!</h4>
             <Game />
         </>
     );

@@ -4,22 +4,23 @@ import { Link as RouterLink } from 'react-router-dom';
 
 // Navigation Links
 const links = [
-    { path: "/", label: "Home" },
-    { path: "/rock-paper-scissors", label: "Rock-Paper-Scissors" },
-    { path: "/tic-tac-toe", label: "TicTacToe" },
-    { path: "/hangman", label: "Hangman" },
-    { path: "/connect4", label: "Connect4" },
-    { path: "/memory", label: "Memory" },
+    // { path: "/", label: "Home" },
+    // { path: "/rock-paper-scissors", label: "Rock-Paper-Scissors" },
+    // { path: "/tic-tac-toe", label: "TicTacToe" },
+    // { path: "/hangman", label: "Hangman" },
+    // { path: "/connect4", label: "Connect4" },
+    // { path: "/memory", label: "Memory" },
+    { path: "/minesweeper", label: "Minesweeper" },
 
-    // { path: "/dots", label: "Dots" },
-    // { path: "/snake", label: "Snake" },
-    // { path: "/minesweeper", label: "Minesweeper" },
-    // { path: "/simon-says", label: "Simon Says" },
-    // { path: "/checkers", label: "Checkers" },
-    // { path: "/sudoku", label: "Sudoku" },
-    // { path: '/word-search', label: 'Word Search' },
-    // { path: '/battle-ship', label: 'Battle Ship' },
-    // { path: '/chess', label: 'Chess' }
+    // WIP Links
+    { path: "/dots", label: "Dots" },
+    { path: "/snake", label: "Snake" },
+    { path: "/simon-says", label: "Simon Says" },
+    { path: "/checkers", label: "Checkers" },
+    { path: "/sudoku", label: "Sudoku" },
+    { path: '/word-search', label: 'Word Search' },
+    { path: '/battle-ship', label: 'Battle Ship' },
+    { path: '/chess', label: 'Chess' }
 ];
 
 // Conditionally add the Sandbox link in development mode
