@@ -1,4 +1,7 @@
+// Dependencies
 import React, { useState, useEffect } from 'react';
+
+// Components
 import Board from './Board';
 
 const ROWS = 20;
@@ -10,11 +13,12 @@ const DIRECTIONS = {
     ArrowRight: { row: 0, col: 1 },
 };
 
-function SnakeGame() {
+function Game() {
     const [board, setBoard] = useState(createBoard());
     const [snake, setSnake] = useState([{ row: 10, col: 10 }]);
     const [direction, setDirection] = useState(DIRECTIONS.ArrowRight);
-    const [food, setFood] = useState(generateFood());
+    const [food, setFood] = useState(generateFood([{ row: 10, col: 10 }]));
+    const [gameOver, setGameOver] = useState(false);
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -28,6 +32,8 @@ function SnakeGame() {
     }, []);
 
     useEffect(() => {
+        if (gameOver) return;
+
         const interval = setInterval(() => {
             setSnake((prevSnake) => {
                 const newSnake = [...prevSnake];
@@ -45,14 +51,14 @@ function SnakeGame() {
                     newSnake.some((segment) => segment.row === newHead.row && segment.col === newHead.col)
                 ) {
                     clearInterval(interval);
-                    alert('Game Over');
+                    setGameOver(true);
                     return prevSnake;
                 }
 
                 newSnake.unshift(newHead);
 
                 if (newHead.row === food.row && newHead.col === food.col) {
-                    setFood(generateFood());
+                    setFood(generateFood(newSnake));
                 } else {
                     newSnake.pop();
                 }
@@ -62,7 +68,7 @@ function SnakeGame() {
         }, 200);
 
         return () => clearInterval(interval);
-    }, [direction, food]);
+    }, [direction, food, gameOver]);
 
     useEffect(() => {
         const newBoard = createBoard();
@@ -73,10 +79,24 @@ function SnakeGame() {
         setBoard(newBoard);
     }, [snake, food]);
 
+    const resetGame = () => {
+        setBoard(createBoard());
+        setSnake([{ row: 10, col: 10 }]);
+        setDirection(DIRECTIONS.ArrowRight);
+        setFood(generateFood([{ row: 10, col: 10 }]));
+        setGameOver(false);
+    };
+
     return (
-        <div className="snake-game">
-            <h1>Snake Game</h1>
+        <div className="flex flex-col items-center">
             <Board board={board} />
+            {gameOver && <div className="text-red-500 font-bold">Game Over</div>}
+            <button
+                onClick={resetGame}
+                className="mt-4 p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition-colors duration-200"
+            >
+                Reset Game
+            </button>
         </div>
     );
 }
@@ -85,11 +105,18 @@ function createBoard() {
     return Array.from({ length: ROWS }, () => Array(COLS).fill(''));
 }
 
-function generateFood() {
-    return {
-        row: Math.floor(Math.random() * ROWS),
-        col: Math.floor(Math.random() * COLS),
-    };
+function generateFood(snake) {
+    let newFood;
+    const isFoodOnSnake = (food) => snake.some((segment) => segment.row === food.row && segment.col === food.col);
+
+    do {
+        newFood = {
+            row: Math.floor(Math.random() * ROWS),
+            col: Math.floor(Math.random() * COLS),
+        };
+    } while (isFoodOnSnake(newFood));
+
+    return newFood;
 }
 
-export default SnakeGame;
+export default Game;
