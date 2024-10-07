@@ -8,9 +8,9 @@ import RockPaperScissors from './pages/RockPaperScissor';
 import TicTacToe from './pages/TicTacToe';
 import Hangman from './pages/Hangman';
 import Connect4 from './pages/Connect4';
+import MemoryMatching from './pages/MemoryMatching';
 
 import DotsGamePage from './pages/DotsGamePage';
-import MemoryGamePage from './pages/MemoryGamePage';
 import SnakeGamePage from './pages/SnakeGamePage';
 import MinesweeperGamePage from './pages/MinesweeperGamePage';
 import SimonSaysGamePage from './pages/SimonSaysGamePage';
@@ -28,9 +28,9 @@ const pages = [
     { path: '/tic-tac-toe', component: <TicTacToe /> },
     { path: '/hangman', component: <Hangman /> },
     { path: '/connect4', component: <Connect4 /> },
+    { path: '/memory', component: <MemoryMatching /> },
 
     { path: '/dots', component: <DotsGamePage /> },
-    { path: '/memory', component: <MemoryGamePage /> },
     { path: '/snake', component: <SnakeGamePage /> },
     { path: '/minesweeper', component: <MinesweeperGamePage /> },
     { path: '/simon-says', component: <SimonSaysGamePage /> },

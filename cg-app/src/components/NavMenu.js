@@ -9,9 +9,9 @@ const links = [
     { path: "/tic-tac-toe", label: "TicTacToe" },
     { path: "/hangman", label: "Hangman" },
     { path: "/connect4", label: "Connect4" },
+    { path: "/memory", label: "Memory" },
 
     // { path: "/dots", label: "Dots" },
-    // { path: "/memory", label: "Memory" },
     // { path: "/snake", label: "Snake" },
     // { path: "/minesweeper", label: "Minesweeper" },
     // { path: "/simon-says", label: "Simon Says" },
