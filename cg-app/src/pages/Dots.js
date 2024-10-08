@@ -7,8 +7,8 @@ import Game from '../components/games/dots/Game';
 function Dots() {
     return (
         <>
-            <h1 className="text-3xl font-bold mb-4 text-center">Dots Game</h1>
-            <h4 className="text-lg mb-4 text-center">Connect the dots to create boxes!</h4>
+            <h1 className="text-4xl font-bold mb-4 text-center">Dots Game</h1>
+            <h4 className="text-lg mb-2 text-center">Connect the dots to create boxes!</h4>
             <Game />
         </>
     );

@@ -94,6 +94,7 @@ const Games = [
         link: "/dots",
         component: <Dots />,
         environemnt: "development",
+        // TODO: Finish Dots game
     },
     {
         id: 10,
@@ -102,6 +103,7 @@ const Games = [
         link: "/battle-ship",
         component: <Battleship />,
         environemnt: "development",
+        // TODO: Finish Battle Ship game
     },
     ...(process.env.NODE_ENV === 'development' ? [{
         id: 999999999,

@@ -7,8 +7,6 @@ import Board from './Board';
 // Hooks
 import useIsMobile from '../../../hooks/useIsMobile';
 
-const ROWS = 20;
-const COLS = 20;
 const DIRECTIONS = {
     ArrowUp: { row: -1, col: 0 },
     ArrowDown: { row: 1, col: 0 },
@@ -16,18 +14,18 @@ const DIRECTIONS = {
     ArrowRight: { row: 0, col: 1 },
 };
 
-function createBoard() {
-    return Array.from({ length: ROWS }, () => Array(COLS).fill(''));
+function createBoard(rows, cols) {
+    return Array.from({ length: rows }, () => Array(cols).fill(''));
 }
 
-function generateFood(snake) {
+function generateFood(snake, rows, cols) {
     let newFood;
     const isFoodOnSnake = (food) => snake.some((segment) => segment.row === food.row && segment.col === food.col);
 
     do {
         newFood = {
-            row: Math.floor(Math.random() * ROWS),
-            col: Math.floor(Math.random() * COLS),
+            row: Math.floor(Math.random() * rows),
+            col: Math.floor(Math.random() * cols),
         };
     } while (isFoodOnSnake(newFood));
 
@@ -35,12 +33,15 @@ function generateFood(snake) {
 }
 
 function Game() {
-    const [board, setBoard] = useState(createBoard());
-    const [snake, setSnake] = useState([{ row: 10, col: 10 }]);
-    const [direction, setDirection] = useState(DIRECTIONS.ArrowRight);
-    const [food, setFood] = useState(generateFood([{ row: 10, col: 10 }]));
-    const [gameOver, setGameOver] = useState(false);
     const isMobile = useIsMobile();
+    const ROWS = isMobile ? 15 : 20;
+    const COLS = isMobile ? 15 : 20;
+
+    const [board, setBoard] = useState(createBoard(ROWS, COLS));
+    const [snake, setSnake] = useState([{ row: Math.floor(ROWS / 2), col: Math.floor(COLS / 2) }]);
+    const [direction, setDirection] = useState(DIRECTIONS.ArrowRight);
+    const [food, setFood] = useState(generateFood([{ row: Math.floor(ROWS / 2), col: Math.floor(COLS / 2) }], ROWS, COLS));
+    const [gameOver, setGameOver] = useState(false);
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -80,7 +81,7 @@ function Game() {
                 newSnake.unshift(newHead);
 
                 if (newHead.row === food.row && newHead.col === food.col) {
-                    setFood(generateFood(newSnake));
+                    setFood(generateFood(newSnake, ROWS, COLS));
                 } else {
                     newSnake.pop();
                 }
@@ -90,16 +91,16 @@ function Game() {
         }, 200);
 
         return () => clearInterval(interval);
-    }, [direction, food, gameOver]);
+    }, [direction, food, gameOver, ROWS, COLS]);
 
     useEffect(() => {
-        const newBoard = createBoard();
+        const newBoard = createBoard(ROWS, COLS);
         snake.forEach((segment) => {
             newBoard[segment.row][segment.col] = 'snake';
         });
         newBoard[food.row][food.col] = 'food';
         setBoard(newBoard);
-    }, [snake, food]);
+    }, [snake, food, ROWS, COLS]);
 
     useEffect(() => {
         if (!isMobile) return;
@@ -149,10 +150,10 @@ function Game() {
     }, [isMobile]);
 
     const resetGame = () => {
-        setBoard(createBoard());
-        setSnake([{ row: 10, col: 10 }]);
+        setBoard(createBoard(ROWS, COLS));
+        setSnake([{ row: Math.floor(ROWS / 2), col: Math.floor(COLS / 2) }]);
         setDirection(DIRECTIONS.ArrowRight);
-        setFood(generateFood([{ row: 10, col: 10 }]));
+        setFood(generateFood([{ row: Math.floor(ROWS / 2), col: Math.floor(COLS / 2) }], ROWS, COLS));
         setGameOver(false);
     };
 
