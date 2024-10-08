@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// Dependencies
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+// Styles
+import './assets/styles/App.css';
+
+// Components
+import Routes from './Routes';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="flex flex-col min-h-screen">
+        <Router basename='/chalkboard-games'>
+          <Header />
+          <main className="flex-grow p-4">
+            <Routes />
+          </main>
+          <Footer />
+        </Router>
+      </div>
+    </>
   );
 }
 
