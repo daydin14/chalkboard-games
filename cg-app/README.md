@@ -2,6 +2,7 @@
 
 #### Commit History (Newest on top) :
 
+- Update repo readme
 - Refactor pages for useIsMobile hook
 - WIP Refactor Dots and Boxes Game component
 - Update package.json version and added eslint dev dependency
