@@ -91,11 +91,11 @@ To get started with the project, follow these steps:
 
 ## Screenshots
 
-<!-- <img src="./Assets/Images/Home_Page_Light.png" alt="Home Page -Light" width="400"/>
-<img src="./Assets/Images/Home_Page_Dark.png" alt="Home Page -Dark" width="400"/>
-<img src="./Assets/Images/Home_Page_Map_Marker.png" alt="Home Page Map and Map Marker" width="400"/>
-<img src="./Assets/Images/Revies_&_SidePanel.png" alt="Reviews Page and SidePanel" width="400"/>
-<img src="./Assets/Images/Contact_&_SidePanel.png" alt="Contact Page and SidePanel" width="400"/> -->
+<img src="./Assets/screenshots/Web/home-web.png" alt="Home Page" width="400"/>
+<img src="./Assets/screenshots/Web/connect4-web.png" alt="Connect 4" width="400"/>
+<img src="./Assets/screenshots/Mobile/home-mobile.png" alt="Home Page Mobile View" width="400"/>
+<img src="./Assets/screenshots/Mobile/home-nav-mobile.png" alt="Mobile Navigation" width="400"/>
+<img src="./Assets/screenshots/Mobile/hangman-mobile.png" alt="Hangman on Mobile View" width="400"/>
 
 ## Deployment on GitHub Pages
 

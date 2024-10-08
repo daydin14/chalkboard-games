@@ -2,6 +2,7 @@
 
 #### Commit History (Newest on top) :
 
+- Added UI screenshots in README.md
 - Update repo readme
 - Refactor pages for useIsMobile hook
 - WIP Refactor Dots and Boxes Game component
