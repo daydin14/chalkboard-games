@@ -41,10 +41,10 @@ Live site: https://daydin14.github.io/chalkboard-games/
 
 ## Getting started
 
-The app lives in `cg-app`. Node 20 or newer is required.
+The app lives in `app`. Node 20 or newer is required.
 
 ```bash
-cd cg-app
+cd app
 npm install
 npm run dev
 ```
@@ -68,7 +68,7 @@ Vite serves the app at `http://localhost:5173/chalkboard-games/`. The `/chalkboa
 
 ## Deployment
 
-Pushes to `master` run `.github/workflows/ci.yml`. The workflow lints, tests, and builds `cg-app`, copies `index.html` to `404.html` so client-side routes survive a refresh, and deploys the `dist` folder to GitHub Pages.
+Pushes to `master` run `.github/workflows/ci.yml`. The workflow lints, tests, and builds `app`, copies `index.html` to `404.html` so client-side routes survive a refresh, and deploys the `dist` folder to GitHub Pages.
 
 The production base path is `/chalkboard-games/`.
 

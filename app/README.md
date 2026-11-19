@@ -1,4 +1,4 @@
-# cg-app
+# app
 
 React app for [Chalkboard Games](../README.md). Tooling, scripts, and the GitHub Pages setup are documented there.
 
