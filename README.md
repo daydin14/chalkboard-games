@@ -1,127 +1,80 @@
-# Chalkboard-Games
+# Chalkboard Games
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+![React](https://img.shields.io/badge/React-19-20232a?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![daisyUI](https://img.shields.io/badge/daisyUI-5-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-121013?style=for-the-badge&logo=github&logoColor=white)
 
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+Classic games on a digital chalkboard, built by David Aydin.
 
-![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![DaisyUI](https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)
+Live site: https://daydin14.github.io/chalkboard-games/
 
-![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+## Games
 
-- Deployed to GH-Pages: https://daydin14.github.io/chalkboard-games/
-
-## Table of Contents
-
-- [Getting Started](#getting-started)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Screenshots](#screenshots)
-- [Deployment on GitHub Pages](#deployment-on-github-pages)
-
-## Getting Started
-
-To get started with the project, follow these steps:
-
-1. **Fork the repository**: Click the "Fork" button at the top right of this repository to create a copy of the repository in your GitHub account.
-2. **Clone the repository**: Clone the forked repository to your local machine using the following command:
-   ```bash
-   git clone https://github.com/<your-username>/chalkboard-games.git
-   ```
-3. **Navigate to the project directory**: Change into the project directory:
-   ```bash
-   cd cg-app
-   ```
-4. **Open with VS Code**: Using the terminal, after you've changed directory into the project:
-   ```bash
-   code .
-   //Daves Side Note: '.' is similar to saying, code "current directory"
-   ```
-5. **Install dependencies**: Install the required dependencies using npm:
-   ```bash
-   npm install || npm i
-   ```
-6. **Start the development server**: Start the development server to run the application locally:
-   ```bash
-   npm start
-   ```
-
-## Features
-
-- **Single-Page Application**: Built using React, providing a smooth and responsive user experience.
-- **Google Maps Integration**: Utilizes the Google Maps API to display business information and location.
-- **Google Analytics Integration**: Tracks and analyzes user interactions to provide insights into user behavior and application performance.
-- **Tailwind CSS**: Styled using Tailwind CSS for a utility-first approach to design.
-- **DaisyUI**: Utilized DaisyUI components for a modern and consistent design.
-
-## Technologies Used
-
-### IDEs/Editors
-
-- **VS Code**: A powerful, lightweight code editor with built-in support for JavaScript, TypeScript, and Node.js.
-
-### Languages
-
-- **JavaScript (JS)**: The main programming language used for building the application.
-- **HTML**: Used for structuring the web pages.
-- **CSS**: Used for styling the web pages.
-- **Markdown (MD)**: Used for writing documentation.
-
-### Version Control
-
-- **Git**: A distributed version control system for tracking changes in source code.
-- **GitHub**: A web-based platform for version control and collaboration.
-
-### Frameworks, Platforms, and Libraries
-
-- **NPM**: A package manager for JavaScript, used to install dependencies.
-- **React**: A JavaScript library for building user interfaces.
-- **React Router**: A library for routing in React applications.
-- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom user interfaces.
-- **DaisyUI**: A plugin for Tailwind CSS that provides a set of accessible and customizable UI components.
+- Rock Paper Scissors
+- Tic Tac Toe, with move rewind
+- Hangman
+- Connect 4
+- Memory
+- Minesweeper
+- Snake
+- Simon Says
+- Dots & Boxes
+- Battleship
 
 ## Screenshots
 
-<img src="./Assets/screenshots/Web/home-web.png" alt="Home Page" width="400"/>
-<img src="./Assets/screenshots/Web/connect4-web.png" alt="Connect 4" width="400"/>
-<img src="./Assets/screenshots/Mobile/home-mobile.png" alt="Home Page Mobile View" width="400"/>
-<img src="./Assets/screenshots/Mobile/home-nav-mobile.png" alt="Mobile Navigation" width="400"/>
-<img src="./Assets/screenshots/Mobile/hangman-mobile.png" alt="Hangman on Mobile View" width="400"/>
+### Desktop
 
-## Deployment on GitHub Pages
+<img src="./Assets/screenshots/Web/home-web.png" alt="Home page on a desktop browser" width="720"/>
 
-This project uses the gh-pages node package to deploy the application to GitHub Pages.
-Follow these steps to deploy your application:
+<img src="./Assets/screenshots/Web/connect4-web.png" alt="Connect 4 on a desktop browser" width="720"/>
 
-1. **Install gh-pages**: Install the gh-pages package as a development dependency:
-   ```bash
-   npm install gh-pages --save-dev
-   ```
-2. **Update package.json**: Add the following scripts to your package.json file:
-   ```json
-   "scripts": {
-       "predeploy": "npm run build",
-       "deploy": "gh-pages -d build",
-       "start": "react-scripts start",
-       "build": "react-scripts build",
-       "test": "react-scripts test",
-       "eject": "react-scripts eject"
-   }
-   ```
-3. **Add homepage field**: Add the homepage field to your package.json file with the URL of your GitHub Pages site:
-   ```json
-   "homepage": "https://<your-username>.github.io/allenhurstcleaners_v2"
-   ```
-4. **Deploy the application**: Run the deploy script to build and deploy the application to GitHub Pages:
-   ```bash
-   npm run deploy
-   ```
+### Mobile
+
+<img src="./Assets/screenshots/Mobile/home-mobile.png" alt="Home page on a phone" width="280"/>
+<img src="./Assets/screenshots/Mobile/home-nav-mobile.png" alt="Game menu on a phone" width="280"/>
+<img src="./Assets/screenshots/Mobile/hangman-mobile.png" alt="Hangman on a phone" width="280"/>
+<img src="./Assets/screenshots/Mobile/snake-mobile.png" alt="Snake on a phone" width="280"/>
+
+## Getting started
+
+The app lives in `app`. Node 20 or newer is required.
+
+```bash
+cd app
+npm install
+npm run dev
+```
+
+Vite serves the app at `http://localhost:5173/chalkboard-games/`. The `/chalkboard-games/` base path matches the GitHub Pages project site.
+
+| Script | What it does |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run lint` | ESLint |
+| `npm test` | Game-rule tests |
+| `npm run build` | Production build in `dist/` |
+| `npm run preview` | Serve the production build |
+
+## Stack
+
+- React 19 and React Router
+- Vite 7
+- Tailwind CSS 4 and daisyUI 5, with a custom chalkboard theme
+- Vitest for the game rules
+
+## Deployment
+
+Pushes to `master` run `.github/workflows/ci.yml`. The workflow lints, tests, and builds `app`, copies `index.html` to `404.html` so client-side routes survive a refresh, and deploys the `dist` folder to GitHub Pages.
+
+The production base path is `/chalkboard-games/`.
+
+**Pages source:** this repository currently publishes from the legacy `gh-pages` branch. The new workflow deploys only after the source is switched:
+
+1. Open **Settings → Pages → Build and deployment**.
+2. Set **Source** to **GitHub Actions**.
+
+Until that setting changes, the Actions deploy job cannot update https://daydin14.github.io/chalkboard-games/. The old `gh-pages` branch is no longer the build output.
